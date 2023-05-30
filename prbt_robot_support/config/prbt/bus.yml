@@ -23,8 +23,8 @@ prbt_joint_1:
     #- {index: 0x2060, sub_index: 2, value: 1} # Request brake test
     # - {index: 0x6081, sub_index: 0, value: 1000}
     # - {index: 0x6083, sub_index: 0, value: 2000}
-    - {index: 0x60C2, sub_index: 1, value: 15} # Interpolation time period at 10 ms matches the period.
-    - {index: 0x6060, sub_index: 0, value: 7} # Make default mode to interpolated position mode.
+    - {index: 0x60C2, sub_index: 1, value: 10} # Interpolation time period at 10 ms matches the period.
+
   tpdo: # TPDO needed statusword, actual velocity, actual position, mode of operation
     1:
       enabled: true
@@ -75,8 +75,8 @@ prbt_joint_2:
     #- {index: 0x2060, sub_index: 2, value: 1} # Request brake test
     # - {index: 0x6081, sub_index: 0, value: 1000}
     # - {index: 0x6083, sub_index: 0, value: 2000}
-    - {index: 0x60C2, sub_index: 1, value: 15} # Interpolation time period at 10 ms matches the period.
-    - {index: 0x6060, sub_index: 0, value: 7} # Make default mode to interpolated position mode.
+    - {index: 0x60C2, sub_index: 1, value: 10} # Interpolation time period at 10 ms matches the period.
+
   tpdo: # TPDO needed statusword, actual velocity, actual position, mode of operation
     1:
       enabled: true
@@ -128,8 +128,8 @@ prbt_joint_3:
     #- {index: 0x2060, sub_index: 2, value: 1} # Request brake test
     # - {index: 0x6081, sub_index: 0, value: 1000}
     # - {index: 0x6083, sub_index: 0, value: 2000}
-    - {index: 0x60C2, sub_index: 1, value: 15} # Interpolation time period at 10 ms matches the period.
-    - {index: 0x6060, sub_index: 0, value: 7} # Make default mode to interpolated position mode.
+    - {index: 0x60C2, sub_index: 1, value: 10} # Interpolation time period at 10 ms matches the period.
+
   tpdo: # TPDO needed statusword, actual velocity, actual position, mode of operation
     1:
       enabled: true
@@ -180,8 +180,8 @@ prbt_joint_4:
     #- {index: 0x2060, sub_index: 2, value: 1} # Request brake test
     # - {index: 0x6081, sub_index: 0, value: 1000}
     # - {index: 0x6083, sub_index: 0, value: 2000}
-    - {index: 0x60C2, sub_index: 1, value: 15} # Interpolation time period at 10 ms matches the period.
-    - {index: 0x6060, sub_index: 0, value: 7} # Make default mode to interpolated position mode.
+    - {index: 0x60C2, sub_index: 1, value: 10} # Interpolation time period at 10 ms matches the period.
+
   tpdo: # TPDO needed statusword, actual velocity, actual position, mode of operation
     1:
       enabled: true
@@ -232,8 +232,8 @@ prbt_joint_5:
     #- {index: 0x2060, sub_index: 2, value: 1} # Request brake test
     # - {index: 0x6081, sub_index: 0, value: 1000}
     # - {index: 0x6083, sub_index: 0, value: 2000}
-    - {index: 0x60C2, sub_index: 1, value: 15} # Interpolation time period at 10 ms matches the period.
-    - {index: 0x6060, sub_index: 0, value: 7} # Make default mode to interpolated position mode.
+    - {index: 0x60C2, sub_index: 1, value: 10} # Interpolation time period at 10 ms matches the period.
+
   tpdo: # TPDO needed statusword, actual velocity, actual position, mode of operation
     1:
       enabled: true
@@ -284,8 +284,8 @@ prbt_joint_6:
     #- {index: 0x2060, sub_index: 2, value: 1} # Request brake test
     # - {index: 0x6081, sub_index: 0, value: 1000}
     # - {index: 0x6083, sub_index: 0, value: 2000}
-    - {index: 0x60C2, sub_index: 1, value: 15} # Interpolation time period at 10 ms matches the period.
-    - {index: 0x6060, sub_index: 0, value: 7} # Make default mode to interpolated position mode.
+    - {index: 0x60C2, sub_index: 1, value: 10} # Interpolation time period at 10 ms matches the period.
+
   tpdo: # TPDO needed statusword, actual velocity, actual position, mode of operation
     1:
       enabled: true
