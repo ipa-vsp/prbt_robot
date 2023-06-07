@@ -27,7 +27,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "can_interface",
-            default_value="can0",
+            default_value="vcan0",
             description="Interface name for can",
         )
     )
@@ -40,25 +40,6 @@ def generate_launch_description():
             "can_interface": LaunchConfiguration("can_interface"),
             "use_ros2_control": "true",
         }.items(),
-    )
-
-    # todo: remove this once joint_state_broadcast from controller is fixed
-    state_publisher = Node(
-        package="joint_state_publisher",
-        name="joint_state_publisher",
-        executable="joint_state_publisher",
-        parameters=[{
-            "source_list": [
-                "/prbt_joint_1/joint_states",
-                "/prbt_joint_2/joint_states",
-                "/prbt_joint_3/joint_states",
-                "/prbt_joint_4/joint_states",
-                "/prbt_joint_5/joint_states",
-                "/prbt_joint_6/joint_states",
-                "/prbt_joint_7/joint_states",
-                ],
-            "rate": 10
-        }]
     )
 
     virtual_joints = IncludeLaunchDescription(

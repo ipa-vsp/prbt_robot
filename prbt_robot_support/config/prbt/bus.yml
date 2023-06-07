@@ -1,6 +1,5 @@
 options:
   dcf_path: "@BUS_CONFIG_PATH@"
-
 master:
   node_id: 1
   driver: "ros2_canopen::MasterDriver"
@@ -12,15 +11,18 @@ defaults:
   driver: "ros2_canopen::Cia402Driver"
   package: "canopen_402_driver"
   period: 10
+  enable_lazy_load: false
   heartbeat_producer: 1000
   switching_state: 2
   position_mode: 7
+  scale_pos_from_dev: 0.00001745329252
+  scale_pos_to_dev: 57295.7795131
   sdo:
     #- {index: 0x2060, sub_index: 2, value: 1} # Request brake test
-    - {index: 0x6081, sub_index: 0, value: 1000}
-    - {index: 0x6083, sub_index: 0, value: 2000}
+    # - {index: 0x6081, sub_index: 0, value: 1000}
+    # - {index: 0x6083, sub_index: 0, value: 2000}
     - {index: 0x60C2, sub_index: 1, value: 10} # Interpolation time period at 10 ms matches the period.
-    # - {index: 0x6060, sub_index: 0, value: 7} # Make default mode to interpolated position mode.
+
   tpdo: # TPDO needed statusword, actual velocity, actual position, mode of operation
     1:
       enabled: true
@@ -54,22 +56,17 @@ defaults:
       mapping:
       - {index: 0x607A, sub_index: 0} # target position
 
-
 nodes:
   prbt_joint_1:
     node_id: 3
-  
   prbt_joint_2:
     node_id: 4
-  
-  prbt_joint_3: 
+  prbt_joint_3:
     node_id: 5
-  
-  prbt_joint_4:     
+  prbt_joint_4:
     node_id: 6
-  
   prbt_joint_5:
     node_id: 7
-  
   prbt_joint_6:
     node_id: 8
+  
