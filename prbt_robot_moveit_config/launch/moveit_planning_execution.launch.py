@@ -26,7 +26,7 @@ def generate_launch_description():
     
     declared_arguments.append(
         DeclareLaunchArgument(
-            "can_interface",
+            "can_interface_name",
             default_value="vcan0",
             description="Interface name for can",
         )
@@ -37,7 +37,7 @@ def generate_launch_description():
             [PathJoinSubstitution([FindPackageShare("prbt_robot_support"), "launch", "robot.launch.py"])],
         ),
         launch_arguments={
-            "can_interface": LaunchConfiguration("can_interface"),
+            "can_interface_name": LaunchConfiguration("can_interface_name"),
             "use_ros2_control": "true",
         }.items(),
     )

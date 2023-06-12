@@ -24,7 +24,7 @@ def generate_launch_description():
     )
     declared_arguments.append(
         DeclareLaunchArgument(
-            "can_interface",
+            "can_interface_name",
             default_value="vcan0",
             description="Interface name for can",
         )
@@ -40,7 +40,7 @@ def generate_launch_description():
     controller_config = PathJoinSubstitution([FindPackageShare("prbt_robot_support"), "config", "prbt_ros2_control.yaml"])
     bus_config = PathJoinSubstitution([FindPackageShare("prbt_robot_support"), "config", "prbt", "bus.yml"])
     master_config = PathJoinSubstitution([FindPackageShare("prbt_robot_support"), "config", "prbt", "master.dcf"])
-    can_interface = LaunchConfiguration("can_interface")
+    can_interface_name = LaunchConfiguration("can_interface_name")
 
     master_bin_path = os.path.join(
                 get_package_share_directory("prbt_robot_support"),
@@ -65,8 +65,8 @@ def generate_launch_description():
             "master_bin:=",
             master_bin_path,
             " ",
-            "can_interface:=",
-            can_interface,
+            "can_interface_name:=",
+            can_interface_name,
             " ",
             # "use_ros2_control:=",
             # LaunchConfiguration("use_ros2_control"),
