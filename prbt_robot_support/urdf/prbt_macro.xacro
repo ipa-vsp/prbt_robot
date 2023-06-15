@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:macro name="prbt" params="prefix">
+  <xacro:macro name="prbt" params="prefix parent *origin">
 
     <!-- Height of Foot -->
     <xacro:property name="L0" value="0.2604" />
@@ -13,6 +13,12 @@
 
     <!-- Distance last joint to flange -->
     <xacro:property name="L3" value="0.0840" />
+
+    <joint name="${prefix}base_link_${parent}_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${prefix}base_link"/>
+    </joint>
 
     <!-- robot foot link -->
     <link name="${prefix}base_link">

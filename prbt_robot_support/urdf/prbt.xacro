@@ -12,12 +12,11 @@
 
 
     <!-- instantiate the robot -->
-    <xacro:prbt prefix="$(arg robot_prefix)" />
     <link name="world"/>
-    <joint name="world-base_link-fixed" type="fixed">
-        <parent link="world"/>
-        <child link="$(arg robot_prefix)base_link"/>
-    </joint>
+    <xacro:prbt prefix="$(arg robot_prefix)" parent="world">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:prbt>
+    
     <xacro:prbt_ros2_control
         name="$(arg robot_prefix)"
         prefix="$(arg robot_prefix)"
