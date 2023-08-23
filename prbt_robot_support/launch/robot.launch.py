@@ -68,9 +68,6 @@ def generate_launch_description():
             "can_interface_name:=",
             can_interface_name,
             " ",
-            # "use_ros2_control:=",
-            # LaunchConfiguration("use_ros2_control"),
-            # " ", 
         ]
     )
     robot_description = {"robot_description": launch_ros.descriptions.ParameterValue(robot_description_content, value_type=str)}
