@@ -34,7 +34,7 @@ def generate_launch_description():
     return LaunchDescription(
         [
             joint_state_broadcaster_spawner,
-            # arm_controller_spawner,
-            forward_position_controller_spawner, 
+            arm_controller_spawner,
+            # forward_position_controller_spawner, 
         ],
     )
