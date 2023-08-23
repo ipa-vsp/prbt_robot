@@ -110,17 +110,9 @@ def generate_launch_description():
         "prbt", package_name="prbt_robot_moveit_config"
     ).to_moveit_configs()
 
-    move_group = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            str(moveit_config.package_path / "launch/move_group.launch.py")
-        ),
-    )
+    move_group = IncludeLaunchDescription(PythonLaunchDescriptionSource(str(moveit_config.package_path / "launch/move_group.launch.py")))
 
-    rviz = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            str(moveit_config.package_path / "launch/moveit_rviz.launch.py")
-        ),
-    )
+    rviz = IncludeLaunchDescription(PythonLaunchDescriptionSource(str(moveit_config.package_path / "launch/moveit_rviz.launch.py")))
 
     # fake_slave_launch_file = PathJoinSubstitution(
     #     [FindPackageShare("prbt_robot_support"), "launch", "prbt_fake_slave.launch.py"]
@@ -140,8 +132,8 @@ def generate_launch_description():
         robot_state_publisher_node,
         controller_manager_node,
         controller_spawner_node,
-        IncludeLaunchDescription(PythonLaunchDescriptionSource(str(moveit_config.package_path / "launch/move_group.launch.py"))),
-        IncludeLaunchDescription(PythonLaunchDescriptionSource(str(moveit_config.package_path / "launch/moveit_rviz.launch.py")))
+        TimerAction(period=10.0, actions=[move_group]),
+        TimerAction(period=12.0, actions=[rviz]),   
     ]
     
     return LaunchDescription(declared_arguments + nodes_list)
