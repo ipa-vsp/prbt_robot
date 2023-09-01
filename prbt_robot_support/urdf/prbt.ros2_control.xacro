@@ -3,8 +3,9 @@
 
     <xacro:arg name="bus_config" default="$(find prbt_robot_support)/config/prbt/bus.yml"/>
     <xacro:arg name="master_config" default="$(find prbt_robot_support)/config/prbt/master.dcf"/>
-    <xacro:arg name="can_interface_name" default="vcan0"/>
+    <xacro:arg name="can_interface_name" default="can0"/>
     <xacro:arg name="master_bin" default=""/>
+    <xacro:arg name="robot_prefix" default=""/>
 
     <xacro:macro name="prbt_ros2_control" params="
       name
