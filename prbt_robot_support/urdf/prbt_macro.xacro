@@ -359,9 +359,9 @@
     </transmission>
 
     <gazebo>
-      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
         <robotNamespace>prbt</robotNamespace>
-        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <robotSimType>gazebo_ros2_control/DefaultRobotHWSim</robotSimType>
         <legacyModeNS>false</legacyModeNS>        <!-- Only used from ros-kinetic-gazebo-ros-control 2.5.18 -->
       </plugin>
     </gazebo>
