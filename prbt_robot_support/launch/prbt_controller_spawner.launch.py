@@ -22,6 +22,7 @@ def generate_launch_description():
         package="controller_manager",
         executable="spawner",
         arguments=["arm_controller", "--controller-manager", "/controller_manager"],
+        # prefix=["xterm -e gdb -ex run --args"],
     )
 
     forward_position_controller_spawner = Node(
