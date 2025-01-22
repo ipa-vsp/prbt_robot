@@ -298,7 +298,7 @@
       </collision>
     </link>
 
-    <!-- ROS-Industrial 'base' frame: base_link to robot world coordinate sytem transform -->
+    <!-- ROS-Industrial 'base' frame base_link to robot world coordinate sytem transform -->
     <link name="${prefix}base" />
     <joint name="${prefix}base_link-base" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -306,7 +306,7 @@
       <child link="${prefix}base"/>
     </joint>
 
-    <!-- ROS-Industrial 'tool0' frame: all-zeros tool frame -->
+    <!-- ROS-Industrial 'tool0' frame all-zeros tool frame -->
     <link name="${prefix}tool0" />
     <joint name="${prefix}flange-tool0" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
