@@ -29,7 +29,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://prbt_robot_support/meshes/foot.dae" />
+          <mesh filename="file://$(find prbt_robot_support)/meshes/foot.dae" />
         </geometry>
       </visual>
 
@@ -63,7 +63,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://prbt_robot_support/meshes/link_1.dae" />
+          <mesh filename="file://$(find prbt_robot_support)/meshes/link_1.dae" />
         </geometry>
       </visual>
 
@@ -107,7 +107,7 @@
       <visual name="first">
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://prbt_robot_support/meshes/link_2.dae" />
+          <mesh filename="file://$(find prbt_robot_support)/meshes/link_2.dae" />
         </geometry>
       </visual>
 
@@ -146,7 +146,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://prbt_robot_support/meshes/link_3.dae" />
+          <mesh filename="file://$(find prbt_robot_support)/meshes/link_3.dae" />
         </geometry>
       </visual>
 
@@ -190,7 +190,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://prbt_robot_support/meshes/link_4.dae" />
+          <mesh filename="file://$(find prbt_robot_support)/meshes/link_4.dae" />
         </geometry>
       </visual>
 
@@ -229,7 +229,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://prbt_robot_support/meshes/link_5.dae"/>
+          <mesh filename="file://$(find prbt_robot_support)/meshes/link_5.dae"/>
         </geometry>
       </visual>
 
@@ -280,13 +280,13 @@
       <inertial>
         <mass value="0.02" />
         <origin xyz="0 0 0" />
-        <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
       </inertial>
 
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://prbt_robot_support/meshes/flange.dae"/>
+          <mesh filename="file://$(find prbt_robot_support)/meshes/flange.dae"/>
         </geometry>
       </visual>
 
@@ -358,11 +358,11 @@
       <actuator name="${prefix}joint_6_motor"/>
     </transmission>
 
-    <gazebo>
+    <!-- <gazebo>
       <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
         <robotNamespace>prbt</robotNamespace>
         <robotSimType>gazebo_ros2_control/DefaultRobotHWSim</robotSimType>
-        <legacyModeNS>false</legacyModeNS>        <!-- Only used from ros-kinetic-gazebo-ros-control 2.5.18 -->
+        <legacyModeNS>false</legacyModeNS>       
       </plugin>
     </gazebo>
 
@@ -436,7 +436,7 @@
         <topicName>prbt/ft_sensor/joint_6</topicName>
         <jointName>${prefix}joint_6</jointName>
       </plugin>
-    </gazebo>
+    </gazebo> -->
 
   </xacro:macro>
 
